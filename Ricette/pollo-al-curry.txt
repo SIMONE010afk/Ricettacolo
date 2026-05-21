@@ -1,0 +1,29 @@
+titolo: Pollo al curry con riso
+categoria: Pranzo
+cucina: Indiana
+tempo preparazione: 5 minuti
+tempo cottura: 20 minuti
+difficolta: 1
+porzioni: 1
+immagine: pollo-al-curry.jpg
+tag: pollo, curry, riso, latte, veloce, single, cremoso
+
+ingredienti:
+- 80 g | Riso
+- 150 g | Petto di pollo
+- 50 g | Latte
+- q.b. | Farina 00
+- q.b. | Curry in polvere
+- q.b. | Olio extravergine
+- q.b. | Sale
+
+procedimento:
+1. Metti a bollire una pentola d'acqua abbondante, salala e cuoci il riso seguendo il tempo indicato sulla confezione (di solito 10-12 minuti per il riso bianco classico).
+2. Nel frattempo taglia il pollo a bocconcini regolari (circa 2-3 cm) e impanali nella farina 00, premendo bene per far aderire la farina su tutti i lati.
+3. Scalda un filo d'olio in una padella a fuoco medio-alto. Quando è caldo, aggiungi il pollo distribuendolo in un solo strato e cuoci 4-5 minuti rigirando i bocconcini, finché non sono dorati fuori e cotti dentro.
+4. Abbassa a fuoco medio, versa nella padella il latte e aggiungi una bella spolverata di curry (regola la dose secondo i gusti: parti da un cucchiaino e assaggia).
+5. Mescola bene per far amalgamare il curry al latte e per coprire ogni bocconcino. Continua a cuocere finché il latte non si riduce e diventa un sughetto cremoso della densità che preferisci, circa 4-6 minuti.
+6. Scola il riso al dente, impiattalo e versaci sopra il pollo con tutto il suo sughetto al curry.
+
+note:
+La consistenza del sughetto è una questione di gusto: fermati prima se ti piace più liquido, fai asciugare di più se lo vuoi denso. Per una versione più "indiana" puoi sostituire il latte con latte di cocco, oppure aggiungere mezzo cucchiaino di curcuma e un pizzico di zenzero in polvere insieme al curry. Se il latte tende a impazzire (separarsi), abbassa subito il fuoco e mescola energicamente.

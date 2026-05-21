@@ -1,0 +1,29 @@
+titolo: Panino crasto
+categoria: Cena
+cucina: Italiana
+tempo preparazione: 5 minuti
+tempo cottura: 15 minuti
+difficolta: 1
+porzioni: 1
+immagine: panino-crasto.jpg
+tag: panino, bacon, uovo all'occhio di bue, cipolla caramellata, peperone, agropiccante, street food, sostanzioso, veloce, single
+
+ingredienti:
+- 5 fette | Bacon
+- 1 | Uovo
+- 1 | Cipolla
+- 1/2 | Peperone
+- 1 | Panino
+- q.b. | Salsa agropiccante
+
+procedimento:
+1. Accendi il forno a 180°C in modalità statica (o tieni pronta una padella se preferisci cuocere il bacon sul fuoco).
+2. Taglia la cipolla ad anelli sottili e il peperone a strisce. In padella a fuoco basso, fai caramellare la cipolla in un filo d'olio (eventualmente con mezzo cucchiaino di zucchero per accelerare): vuoi che diventi dorata, morbida e dolce, ci vogliono 8-10 minuti di pazienza. A metà cottura aggiungi il peperone e finisci di cuocere insieme.
+3. Disponi le fette di bacon su una teglia con carta forno e inforna per 5-6 minuti, finché non diventano croccanti. In alternativa puoi cuocerlo in padella.
+4. Nel frattempo cuoci l'uovo all'occhio di bue: padella antiaderente calda, un filo d'olio, rompi l'uovo direttamente in padella senza romperne il tuorlo, fuoco medio. Sala l'albume, copri qualche secondo con un coperchio per fissare la parte superiore ma lasciando il tuorlo ancora colante.
+5. Apri il panino a metà e scaldalo brevemente in padella o in forno per renderlo fragrante.
+6. Spalma la salsa agropiccante su entrambe le facce interne del panino.
+7. Componi: prima il letto di cipolle caramellate e peperoni, poi le fette di bacon croccante, infine l'uovo all'occhio di bue (attenzione a non romperlo). Chiudi il panino e mangialo subito mentre è ancora caldo, così il tuorlo cola al primo morso.
+
+note:
+Volendo si può aggiungere anche un hamburger di manzo: cuocilo in padella ben calda 3-4 minuti per lato (per una cottura media) prima di assemblare, e mettilo sotto al bacon. Il tuorlo morbido fa la differenza, non strapazzare l'uovo.
