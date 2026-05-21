@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ricettacolo — Le nostre ricette</title>
+  <script>
+    // Applica il tema PRIMA del render per evitare flash bianco
+    (function() {
+      var saved = localStorage.getItem('ricettacolo-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,6 +25,18 @@
       <nav class="site-nav">
         <a href="#chi-sono">Chi sono</a>
         <a href="#ricette">Ricette</a>
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Cambia tema chiaro/scuro">
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -69,6 +90,37 @@
           <button type="button" class="filter-btn" data-cuisine="cinese">Cinese</button>
           <button type="button" class="filter-btn" data-cuisine="indiana">Indiana</button>
         </div>
+
+        <div class="filters-row">
+          <div class="filter-group" id="difficulty-filters">
+            <span class="filter-label">Difficoltà:</span>
+            <button type="button" class="filter-btn small active" data-difficulty="all">Tutte</button>
+            <button type="button" class="filter-btn small" data-difficulty="1" aria-label="Difficoltà 1">
+              <span class="difficulty-dots"><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></span>
+            </button>
+            <button type="button" class="filter-btn small" data-difficulty="2" aria-label="Difficoltà 2">
+              <span class="difficulty-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span></span>
+            </button>
+            <button type="button" class="filter-btn small" data-difficulty="3" aria-label="Difficoltà 3">
+              <span class="difficulty-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span></span>
+            </button>
+          </div>
+
+          <div class="filter-group" id="time-filters">
+            <span class="filter-label">Tempo:</span>
+            <button type="button" class="filter-btn small active" data-time="all">Tutti</button>
+            <button type="button" class="filter-btn small" data-time="short">≤30 min</button>
+            <button type="button" class="filter-btn small" data-time="medium">30–60 min</button>
+            <button type="button" class="filter-btn small" data-time="long">60+ min</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="active-filter-bar hidden" id="active-filter-bar">
+        <div class="active-filter-chip">
+          <span>Filtro tag: <strong id="active-filter-label">#</strong></span>
+          <button id="active-filter-clear" type="button" aria-label="Rimuovi filtro">✕</button>
+        </div>
       </div>
 
       <div id="recipe-grid" class="recipe-grid">
@@ -86,6 +138,7 @@
   </footer>
 
   <script src="js/parser.js"></script>
+  <script src="js/theme.js"></script>
   <script src="js/home.js"></script>
 </body>
 </html>

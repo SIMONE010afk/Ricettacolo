@@ -105,11 +105,16 @@
           ${recipe.tag.length ? `
             <div class="tags-block">
               <span class="tags-label">Tag:</span>
-              ${recipe.tag.map(t => `<span class="tag-chip">#${escapeHtml(t)}</span>`).join('')}
+              ${recipe.tag.map(t => `<a class="tag-chip" href="index.html?tag=${encodeURIComponent(t)}#ricette">#${escapeHtml(t)}</a>`).join('')}
             </div>
           ` : ''}
         </section>
       </div>
+
+      <section class="related-block hidden" id="related-block">
+        <h3>Potrebbe piacervi anche</h3>
+        <div class="related-grid" id="related-grid"></div>
+      </section>
     `;
 
     // scaler porzioni
@@ -142,6 +147,96 @@
     renderIngredients();
   }
 
+  function difficultyDotsHtml(level) {
+    let html = '<span class="difficulty-dots">';
+    for (let i = 1; i <= 3; i++) {
+      html += '<span class="dot' + (i <= level ? ' filled' : '') + '"></span>';
+    }
+    html += '</span>';
+    return html;
+  }
+
+  function buildRelatedCard(r) {
+    const card = document.createElement('a');
+    card.className = 'recipe-card';
+    card.href = 'ricetta.html?id=' + encodeURIComponent(r.id);
+
+    const imgSrc = r.immagine ? 'Immagini/' + r.immagine : '';
+    const initial = (r.titolo || '?').charAt(0).toUpperCase();
+    const tempo = [r.tempoPrep, r.tempoCottura].filter(Boolean).join(' + ') || '—';
+
+    card.innerHTML = `
+      <div class="recipe-card-image">
+        ${imgSrc
+          ? `<img src="${imgSrc}" alt="${escapeHtml(r.titolo)}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'recipe-card-placeholder',textContent:'${initial}'}))">`
+          : `<span class="recipe-card-placeholder">${initial}</span>`}
+        ${r.cucina ? `<span class="recipe-card-cuisine">${escapeHtml(r.cucina)}</span>` : ''}
+      </div>
+      <div class="recipe-card-body">
+        <h3 class="recipe-card-title">${escapeHtml(r.titolo)}</h3>
+        <p class="muted" style="margin:0;font-size:0.9rem;">${escapeHtml(r.categoria || '')}</p>
+        <div class="recipe-card-meta">
+          <span class="meta-item" title="Tempo totale">⏱ ${escapeHtml(tempo)}</span>
+          <span class="meta-item" title="Difficoltà">${difficultyDotsHtml(r.difficolta)}</span>
+        </div>
+      </div>
+    `;
+    return card;
+  }
+
+  function scoreRelated(current, other) {
+    if (other.id === current.id) return -1;
+    let s = 0;
+    if (other.cucina && current.cucina &&
+        other.cucina.toLowerCase() === current.cucina.toLowerCase()) s += 3;
+    if (other.categoria && current.categoria &&
+        other.categoria.toLowerCase() === current.categoria.toLowerCase()) s += 2;
+    const myTags = new Set((current.tag || []).map(t => t.toLowerCase()));
+    for (const t of (other.tag || [])) {
+      if (myTags.has(t.toLowerCase())) s += 1;
+    }
+    return s;
+  }
+
+  async function loadRelated(currentRecipe) {
+    try {
+      const manifestRes = await fetch('Ricette/index.json', { cache: 'no-cache' });
+      if (!manifestRes.ok) return;
+      const manifest = await manifestRes.json();
+      const files = Array.isArray(manifest) ? manifest : manifest.files || [];
+
+      const others = await Promise.all(files.map(async (filename) => {
+        const id = filename.replace(/\.txt$/i, '');
+        if (id === currentRecipe.id) return null;
+        try {
+          const res = await fetch('Ricette/' + filename, { cache: 'no-cache' });
+          if (!res.ok) return null;
+          const text = await res.text();
+          return window.RicettacoloParser.parseRecipe(text, id);
+        } catch (e) {
+          return null;
+        }
+      }));
+
+      const scored = others
+        .filter(Boolean)
+        .map(r => ({ r: r, s: scoreRelated(currentRecipe, r) }))
+        .filter(x => x.s > 0)
+        .sort((a, b) => b.s - a.s)
+        .slice(0, 3)
+        .map(x => x.r);
+
+      if (scored.length === 0) return;
+      const block = document.getElementById('related-block');
+      const grid = document.getElementById('related-grid');
+      if (!block || !grid) return;
+      scored.forEach(r => grid.appendChild(buildRelatedCard(r)));
+      block.classList.remove('hidden');
+    } catch (err) {
+      console.warn('Related recipes:', err);
+    }
+  }
+
   async function load() {
     const id = getParam('id');
     if (!id) {
@@ -154,6 +249,8 @@
       const text = await res.text();
       const recipe = window.RicettacoloParser.parseRecipe(text, id);
       renderRecipe(recipe);
+      // Carica e mostra ricette correlate in modo asincrono (non blocca il render principale)
+      loadRelated(recipe);
     } catch (err) {
       console.error(err);
       showError('Impossibile caricare questa ricetta. Verifica che il file Ricette/' + id + '.txt esista. Se stai aprendo il sito con doppio click, usa un server locale (es. python -m http.server).');

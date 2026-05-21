@@ -11,8 +11,13 @@
   const grid = document.getElementById('recipe-grid');
   const searchInput = document.getElementById('search-input');
   const filtersBox = document.getElementById('cuisine-filters');
+  const difficultyFilters = document.getElementById('difficulty-filters');
+  const timeFilters = document.getElementById('time-filters');
   const noResults = document.getElementById('no-results');
   const yearEl = document.getElementById('year');
+  const activeFilterBar = document.getElementById('active-filter-bar');
+  const activeFilterLabel = document.getElementById('active-filter-label');
+  const activeFilterClear = document.getElementById('active-filter-clear');
 
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -20,7 +25,10 @@
 
   let allRecipes = [];
   let activeCuisine = 'all';
+  let activeDifficulty = 'all';
+  let activeTime = 'all';
   let query = '';
+  let activeTagFilter = null; // valorizzato quando arriviamo con ?tag=...
 
   function difficultyDots(level) {
     let html = '<span class="difficulty-dots" aria-label="Difficoltà ' + level + ' su 3">';
@@ -69,9 +77,31 @@
       .replace(/'/g, '&#39;');
   }
 
+  function parseMinutes(str) {
+    const m = String(str || '').match(/(\d+)/);
+    return m ? parseInt(m[1], 10) : 0;
+  }
+  function totalMinutes(recipe) {
+    return parseMinutes(recipe.tempoPrep) + parseMinutes(recipe.tempoCottura);
+  }
+
   function matchesFilters(recipe) {
     if (activeCuisine !== 'all') {
       if ((recipe.cucina || '').toLowerCase() !== activeCuisine) return false;
+    }
+    if (activeDifficulty !== 'all') {
+      if (recipe.difficolta !== parseInt(activeDifficulty, 10)) return false;
+    }
+    if (activeTime !== 'all') {
+      const total = totalMinutes(recipe);
+      if (activeTime === 'short' && total > 30) return false;
+      if (activeTime === 'medium' && (total < 30 || total > 60)) return false;
+      if (activeTime === 'long' && total <= 60) return false;
+    }
+    if (activeTagFilter) {
+      const lower = activeTagFilter.toLowerCase();
+      const has = (recipe.tag || []).some(t => t.toLowerCase() === lower);
+      if (!has) return false;
     }
     if (query) {
       const hay = window.RicettacoloParser.searchHaystack(recipe);
@@ -127,15 +157,39 @@
     if (altro.length > 0) grid.appendChild(buildCategorySection('Altre ricette', altro));
   }
 
+  function activateInGroup(group, btn) {
+    group.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
   function setupFilters() {
     filtersBox.addEventListener('click', (e) => {
       const btn = e.target.closest('.filter-btn');
       if (!btn) return;
-      filtersBox.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      activateInGroup(filtersBox, btn);
       activeCuisine = btn.dataset.cuisine;
       render();
     });
+
+    if (difficultyFilters) {
+      difficultyFilters.addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        activateInGroup(difficultyFilters, btn);
+        activeDifficulty = btn.dataset.difficulty;
+        render();
+      });
+    }
+
+    if (timeFilters) {
+      timeFilters.addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        activateInGroup(timeFilters, btn);
+        activeTime = btn.dataset.time;
+        render();
+      });
+    }
   }
 
   function setupSearch() {
@@ -147,6 +201,42 @@
         render();
       }, 120);
     });
+  }
+
+  function updateTagChip() {
+    if (!activeFilterBar) return;
+    if (activeTagFilter) {
+      activeFilterLabel.textContent = '#' + activeTagFilter;
+      activeFilterBar.classList.remove('hidden');
+    } else {
+      activeFilterBar.classList.add('hidden');
+    }
+  }
+
+  function clearTagFilter() {
+    activeTagFilter = null;
+    updateTagChip();
+    // Pulisce anche l'URL dal parametro tag senza ricaricare
+    if (window.history && window.history.replaceState) {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('tag');
+      window.history.replaceState({}, '', url.toString());
+    }
+    render();
+  }
+
+  function setupActiveFilter() {
+    if (!activeFilterClear) return;
+    activeFilterClear.addEventListener('click', clearTagFilter);
+  }
+
+  function readUrlTag() {
+    const params = new URLSearchParams(window.location.search);
+    const tag = params.get('tag');
+    if (tag) {
+      activeTagFilter = tag.trim();
+      updateTagChip();
+    }
   }
 
   async function loadRecipes() {
@@ -183,7 +273,9 @@
     }
   }
 
+  readUrlTag();
   setupFilters();
   setupSearch();
+  setupActiveFilter();
   loadRecipes();
 })();
