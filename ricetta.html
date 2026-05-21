@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ricetta — Ricettacolo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-recipe">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">R</span>
+        <span class="brand-name">Ricettacolo</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html#ricette">Tutte le ricette</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container recipe-page">
+    <a href="index.html#ricette" class="back-link">← Torna alle ricette</a>
+
+    <div id="recipe-content">
+      <p class="loading">Caricamento ricetta...</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ricettacolo</p>
+    </div>
+  </footer>
+
+  <script src="js/parser.js"></script>
+  <script src="js/recipe.js"></script>
+</body>
+</html>

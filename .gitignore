@@ -1,0 +1,44 @@
+# Sistema operativo
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Node / build tools (se in futuro aggiungi un build step)
+node_modules/
+dist/
+build/
+.cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# File temporanei
+*.tmp
+*.bak
+*.old
+*.orig
+
+# File locali / privati
+.env
+.env.local
+*.local
+
+# File di test / bozza
+bozze/

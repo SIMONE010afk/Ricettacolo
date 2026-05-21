@@ -1,0 +1,38 @@
+titolo: Pollo Kung Pao
+categoria: Cena
+cucina: Cinese
+tempo preparazione: 20 minuti
+tempo cottura: 10 minuti
+difficolta: 2
+porzioni: 2
+immagine: pollo-kung-pao.jpg
+tag: pollo, wok, piccante, arachidi, veloce, salsa di soia
+
+ingredienti:
+- 400 g | Petto di pollo a cubetti
+- 80 g | Arachidi tostate non salate
+- 4 | Cipollotti
+- 3 spicchi | Aglio
+- 1 cm | Zenzero fresco
+- 6 | Peperoncini secchi rossi
+- 1 cucchiaino | Pepe di Sichuan (opzionale)
+- 2 cucchiai | Salsa di soia scura
+- 1 cucchiaio | Salsa di soia chiara
+- 1 cucchiaio | Aceto di riso (o aceto nero Chinkiang)
+- 1 cucchiaino | Zucchero
+- 1 cucchiaino | Amido di mais
+- 2 cucchiai | Olio di arachide
+- 1 cucchiaino | Olio di sesamo
+
+procedimento:
+1. Taglia il pollo a cubetti regolari di circa 2 cm e marinalo per 10 minuti con un cucchiaino di salsa di soia chiara e mezzo cucchiaino di amido di mais.
+2. Trita aglio e zenzero. Taglia i cipollotti separando la parte bianca (a rondelle spesse) dalla parte verde (sottile).
+3. Prepara la salsa mescolando in una ciotolina: salsa di soia scura, aceto, zucchero, restante amido di mais e 2 cucchiai d'acqua.
+4. Scalda il wok a fuoco molto alto con l'olio di arachide. Quando fuma leggermente, aggiungi i peperoncini secchi e il pepe di Sichuan e tostali per 10 secondi (occhio a non bruciarli).
+5. Butta il pollo nel wok in un solo strato. Non muoverlo per 1 minuto per farlo dorare, poi saltalo finché non è cotto fuori.
+6. Aggiungi aglio, zenzero e la parte bianca dei cipollotti. Salta per 30 secondi.
+7. Versa la salsa, mescola e lascia addensare per 30 secondi.
+8. Unisci le arachidi, la parte verde dei cipollotti e l'olio di sesamo. Salta 10 secondi e servi subito con riso bianco.
+
+note:
+La firma del Kung Pao è il "má là" — la sensazione anestetizzante del pepe di Sichuan unita al piccante. Non saltarlo se lo trovi. Il segreto del wok è la potenza del fuoco: cuoci in piccole quantità altrimenti il pollo bolle invece di saltare.

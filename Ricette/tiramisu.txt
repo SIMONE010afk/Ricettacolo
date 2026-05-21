@@ -1,0 +1,32 @@
+titolo: Tiramisù classico
+categoria: Dolce
+cucina: Italiana
+tempo preparazione: 30 minuti
+tempo cottura: 0 minuti
+difficolta: 2
+porzioni: 6
+immagine: tiramisu.jpg
+tag: dolce, cucchiaio, mascarpone, caffè, classico, fresco
+
+ingredienti:
+- 500 g | Mascarpone
+- 4 | Uova fresche
+- 100 g | Zucchero
+- 300 g | Savoiardi
+- 300 ml | Caffè espresso (freddo)
+- 30 g | Cacao amaro in polvere
+- 1 pizzico | Sale
+
+procedimento:
+1. Prepara il caffè e lascialo raffreddare completamente in una ciotola larga.
+2. Separa i tuorli dagli albumi. Monta i tuorli con metà dello zucchero finché non diventano chiari e spumosi.
+3. Aggiungi il mascarpone ai tuorli e amalgama con una spatola dal basso verso l'alto fino a ottenere una crema liscia.
+4. In una ciotola pulitissima monta gli albumi a neve ferma con un pizzico di sale, aggiungendo a poco a poco l'altra metà dello zucchero.
+5. Incorpora gli albumi nella crema al mascarpone con movimenti delicati per non smontarli.
+6. Inzuppa velocemente i savoiardi nel caffè (uno alla volta, da entrambi i lati ma senza affogarli) e disponili in un primo strato dentro la pirofila.
+7. Copri con metà della crema livellando bene. Ripeti con un secondo strato di savoiardi inzuppati e completa con il resto della crema.
+8. Copri con pellicola e lascia riposare in frigo almeno 4 ore, meglio una notte intera.
+9. Prima di servire spolvera con abbondante cacao amaro setacciato.
+
+note:
+Se le uova crude ti preoccupano, pastorizza i tuorli con uno sciroppo di zucchero a 121°C. Usa savoiardi industriali (non i pavesini): tengono meglio l'inzuppo. Per una variante alcolica puoi aggiungere un goccio di Marsala o rum al caffè.

@@ -1,0 +1,36 @@
+titolo: Riso alla Cantonese
+categoria: Pranzo
+cucina: Cinese
+tempo preparazione: 15 minuti
+tempo cottura: 10 minuti
+difficolta: 1
+porzioni: 4
+immagine: riso-cantonese.jpg
+tag: riso, wok, veloce, prosciutto, piselli, uova, svuotafrigo
+
+ingredienti:
+- 300 g | Riso basmati (cotto il giorno prima)
+- 3 | Uova
+- 150 g | Prosciutto cotto a cubetti
+- 150 g | Piselli surgelati
+- 3 | Cipollotti
+- 2 spicchi | Aglio
+- 3 cucchiai | Salsa di soia chiara
+- 1 cucchiaino | Olio di sesamo
+- 2 cucchiai | Olio di arachide
+- q.b. | Pepe bianco
+- q.b. | Sale
+
+procedimento:
+1. Usa riso cotto il giorno prima e tenuto in frigo: i chicchi devono essere ben asciutti e separati, altrimenti il riso diventa colla.
+2. Sbatti le uova con un pizzico di sale e un goccio di salsa di soia. Trita finemente i cipollotti separando bianco e verde. Trita l'aglio.
+3. Sbollenta i piselli per 2 minuti in acqua salata e scolali.
+4. Scalda il wok a fuoco vivo con un cucchiaio di olio. Versa le uova sbattute e strapazzale velocemente. Toglile dal wok appena rapprese.
+5. Aggiungi un altro cucchiaio di olio nel wok, butta aglio e parte bianca dei cipollotti, salta 20 secondi.
+6. Unisci il prosciutto e i piselli, salta per 1 minuto.
+7. Aggiungi il riso freddo sgranandolo con le mani prima di metterlo nel wok. Salta a fuoco altissimo per 2-3 minuti continuando a muovere.
+8. Rimetti le uova, versa la salsa di soia e mescola bene per distribuire il colore.
+9. Spegni, aggiungi l'olio di sesamo, la parte verde dei cipollotti e una macinata di pepe bianco. Servi subito.
+
+note:
+La regola d'oro è il riso del giorno prima. Se hai solo riso appena cotto, stendilo su una teglia e mettilo in freezer per 20 minuti prima di usarlo. Il wok deve essere caldissimo: il "wok hei" (il sapore affumicato) nasce proprio da lì.

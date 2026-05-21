@@ -1,0 +1,38 @@
+titolo: Tacos al Pastor
+categoria: Cena
+cucina: Messicana
+tempo preparazione: 30 minuti
+tempo cottura: 25 minuti
+difficolta: 3
+porzioni: 4
+immagine: tacos-al-pastor.jpg
+tag: tacos, maiale, marinatura, street food, ananas, piccante
+
+ingredienti:
+- 700 g | Coppa o lonza di maiale a fette sottili
+- 3 | Peperoncini guajillo secchi
+- 2 | Peperoncini ancho secchi
+- 200 g | Ananas fresco (a fette)
+- 2 spicchi | Aglio
+- 1 | Cipolla bianca media
+- 2 cucchiai | Aceto bianco
+- 1 cucchiaino | Origano
+- 1 cucchiaino | Cumino in polvere
+- 1 cucchiaino | Sale
+- 1 cucchiaino | Achiote (o paprika dolce in sostituzione)
+- 12 | Tortillas di mais piccole
+- 1 mazzetto | Coriandolo fresco
+- 1 | Lime
+
+procedimento:
+1. Tosta brevemente i peperoncini secchi in una padella asciutta, poi mettili a bagno in acqua calda per 15 minuti finché non si ammorbidiscono.
+2. Frulla i peperoncini ammollati con un paio di fette di ananas, aglio, mezza cipolla, aceto, origano, cumino, achiote e sale, fino a ottenere una marinatura liscia.
+3. Disponi le fette di maiale in un contenitore, ricoprile completamente con la marinatura e lascia riposare in frigo almeno 2 ore (meglio una notte).
+4. Scalda una piastra o una padella in ghisa molto bene e cuoci il maiale poche fette alla volta, finché non si formano bordi caramellati e croccanti.
+5. A parte, cuoci anche le fette di ananas rimaste finché non si caramellano leggermente.
+6. Trita il maiale e l'ananas a coltello in pezzi piccoli.
+7. Scalda le tortillas su fuoco diretto pochi secondi per lato.
+8. Componi i tacos con il maiale, qualche pezzetto di ananas, cipolla cruda tritata e coriandolo. Servi con uno spicchio di lime.
+
+note:
+Il bilancio dolce-piccante-affumicato è la firma di questa ricetta. Se non trovi i peperoncini secchi, sostituiscili con 2 cucchiai di pasta di peperoncini chipotle in adobo. L'ananas non è solo un topping: gli enzimi aiutano a intenerire la carne nella marinata.

@@ -1,0 +1,30 @@
+titolo: Saichebon magici
+categoria: Pranzo
+cucina: Cinese
+tempo preparazione: 5 minuti
+tempo cottura: 15 minuti
+difficolta: 1
+porzioni: 1
+immagine: saichebon.jpeg
+tag: veloce, single, svuotafrigo, noodles, bacon
+
+ingredienti:
+- 1 | Confezione di Saikebon
+- 1 | Carota
+- 1 | Cipolla piccola
+- 1/2 | Peperone
+- 5 fette | Bacon
+- 1 | Uovo
+- q.b. | Sale
+- q.b. | Paprica piccante
+
+procedimento:
+1. Accendi il forno a 180°C in modalità statica.
+2. Metti a bollire l'acqua nella pentola del Saikebon con la sua polverina aromatizzante.
+3. Taglia la cipolla e la carota a cubetti, il peperone a strisce. Versali in padella a fuoco basso con un filo d'olio, sale e paprica piccante.
+4. In una pentola piccola metti a bollire l'uovo (circa 8 minuti dall'ebollizione per averlo sodo).
+5. Quando l'acqua del Saikebon bolle aggiungi i noodles. Nel frattempo, quando il forno è caldo, inforna il bacon su una teglia con carta forno per 5-6 minuti finché non è croccante.
+6. Componi tutto in una ciotola spaziosa: noodles e brodo sul fondo, sopra le verdure saltate, le fette di bacon e l'uovo sodo tagliato a metà.
+
+note:
+Il bacon si può fare anche in padella se non vuoi accendere il forno. Per una versione più ricca aggiungi mezzo cucchiaio di salsa di soia o un giro di olio piccante alla ciotola finale.

@@ -1,0 +1,32 @@
+titolo: Spaghetti alla Carbonara
+categoria: Pranzo
+cucina: Italiana
+tempo preparazione: 10 minuti
+tempo cottura: 15 minuti
+difficolta: 2
+porzioni: 4
+immagine: carbonara.jpg
+tag: pasta, classico, uova, guanciale, romano
+
+ingredienti:
+- 320 g | Spaghetti
+- 150 g | Guanciale
+- 4 | Tuorli d'uovo
+- 1 | Uovo intero
+- 60 g | Pecorino Romano grattugiato
+- q.b. | Pepe nero macinato
+- q.b. | Sale grosso (per la pasta)
+
+procedimento:
+1. Metti a bollire una pentola d'acqua abbondante e salala leggermente: il guanciale e il pecorino sono già sapidi.
+2. Taglia il guanciale a listarelle spesse circa mezzo centimetro, eliminando la cotenna.
+3. Fai rosolare il guanciale in una padella fredda, senza olio, a fuoco medio-basso finché non diventa croccante e rilascia il grasso. Spegni e tieni da parte.
+4. In una ciotola sbatti i tuorli con l'uovo intero, il pecorino e abbondante pepe nero. Deve formarsi una crema densa.
+5. Cuoci gli spaghetti al dente e, prima di scolarli, conserva un mestolo d'acqua di cottura.
+6. Scola la pasta e versala nella padella con il guanciale (fuori dal fuoco). Mescola.
+7. Aggiungi la crema di uova e pecorino e manteca con piccoli aggiunte di acqua di cottura, finché non diventa lucida e cremosa.
+8. Servi subito con altro pecorino e pepe nero.
+
+note:
+La carbonara non vuole panna. Il segreto è togliere la padella dal fuoco prima di unire le uova, altrimenti si rapprendono e diventano una frittata. Se hai dubbi sulla temperatura, usa la tecnica del bagnomaria.
+Variante: alcuni usano metà pecorino e metà parmigiano per un sapore più dolce.

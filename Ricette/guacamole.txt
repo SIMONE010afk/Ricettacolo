@@ -1,0 +1,31 @@
+titolo: Guacamole autentico
+categoria: Sfizioso
+cucina: Messicana
+tempo preparazione: 10 minuti
+tempo cottura: 0 minuti
+difficolta: 1
+porzioni: 4
+immagine: guacamole.jpg
+tag: avocado, vegetariano, veloce, fresco, lime, dip
+
+ingredienti:
+- 3 | Avocado maturi
+- 1 | Lime (succo)
+- 1/2 | Cipolla rossa piccola
+- 1 | Pomodoro maturo
+- 1 | Peperoncino verde fresco (jalapeño o serrano)
+- 1 mazzetto | Coriandolo fresco
+- 1/2 cucchiaino | Sale
+- q.b. | Pepe nero
+
+procedimento:
+1. Trita finemente la cipolla rossa, il peperoncino (senza semi se lo vuoi meno piccante) e il coriandolo.
+2. Spella e taglia a cubetti il pomodoro, eliminando i semi acquosi.
+3. Apri gli avocado, togli il nocciolo e scava la polpa in una ciotola.
+4. Schiaccia la polpa con una forchetta lasciandola un po' grossolana — il guacamole non deve essere una crema liscia.
+5. Aggiungi subito il succo di lime per evitare che annerisca, poi unisci cipolla, peperoncino, coriandolo e pomodoro.
+6. Sala, pepa, mescola e assaggia: regola di lime e sale fino a quando il sapore non "scoppia".
+7. Servi subito con tortilla chips o come accompagnamento ai tacos.
+
+note:
+Per mantenerlo verde più a lungo: copri la superficie con un velo di acqua o tieni il nocciolo dentro la ciotola. Evita aglio e cumino se vuoi una versione fedele al guacamole messicano tradizionale.

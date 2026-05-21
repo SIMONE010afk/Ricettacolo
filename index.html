@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ricettacolo — Le nostre ricette</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">R</span>
+        <span class="brand-name">Ricettacolo</span>
+      </a>
+      <nav class="site-nav">
+        <a href="#chi-sono">Chi sono</a>
+        <a href="#ricette">Ricette</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SEZIONE CHI SIAMO — modifica il testo qui sotto con la vostra presentazione -->
+  <section id="chi-sono" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Benvenuti su Ricettacolo</p>
+        <h1>Ciao, siamo <span class="accent">Simone e Asia</span></h1>
+        <p class="lead">
+          Amiamo cucinare, sperimentare e mescolare tradizioni diverse. In questo sito
+          raccogliamo le ricette che prepariamo più spesso, con le nostre note personali,
+          le varianti che abbiamo provato e gli errori da evitare. Niente fronzoli,
+          solo piatti che funzionano davvero.
+        </p>
+        <p>
+          Le nostre passioni? La pasta fatta in casa, lo street food messicano,
+          il wok bollente e il profumo di un dolce appena sfornato. Speriamo che
+          qualcuna di queste ricette diventi anche una delle vostre preferite.
+        </p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-inner">
+          <span class="hero-emoji" aria-hidden="true">🍳</span>
+          <p class="hero-card-quote">"Cucinare è raccontare una storia<br>con quello che hai in dispensa."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ricette" class="recipes-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Le nostre ricette</h2>
+        <p class="muted">Cercate per nome, ingrediente, tag o categoria. Oppure filtrate per cucina.</p>
+      </div>
+
+      <div class="controls">
+        <div class="search-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input type="search" id="search-input" placeholder="Cerca una ricetta, un ingrediente, un tag..." autocomplete="off">
+        </div>
+
+        <div class="filters" id="cuisine-filters">
+          <button type="button" class="filter-btn active" data-cuisine="all">Tutte</button>
+          <button type="button" class="filter-btn" data-cuisine="italiana">Italiana</button>
+          <button type="button" class="filter-btn" data-cuisine="messicana">Messicana</button>
+          <button type="button" class="filter-btn" data-cuisine="cinese">Cinese</button>
+        </div>
+      </div>
+
+      <div id="recipe-grid" class="recipe-grid">
+        <p class="loading">Caricamento ricette...</p>
+      </div>
+
+      <p id="no-results" class="no-results hidden">Nessuna ricetta trovata. Prova con un altro termine.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ricettacolo — ricette di casa, senza fretta.</p>
+    </div>
+  </footer>
+
+  <script src="js/parser.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
