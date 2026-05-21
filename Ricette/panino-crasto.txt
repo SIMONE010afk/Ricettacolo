@@ -5,7 +5,7 @@ tempo preparazione: 5 minuti
 tempo cottura: 15 minuti
 difficolta: 1
 porzioni: 1
-immagine: panino-crasto.jpg
+immagine: panino-crasto.jpeg
 tag: panino, bacon, uovo all'occhio di bue, cipolla caramellata, peperone, agropiccante, street food, sostanzioso, veloce, single
 
 ingredienti:

@@ -397,14 +397,25 @@ h1, h2, h3 {
   align-items: center;
   gap: 4px;
 }
-.difficulty-dots { display: inline-flex; gap: 2px; }
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--border);
+.difficulty-dots {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
 }
-.dot.filled { background: var(--accent); }
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid var(--text-muted);
+  box-sizing: border-box;
+  opacity: 0.55;
+}
+.dot.filled {
+  background: var(--accent);
+  border-color: var(--accent);
+  opacity: 1;
+}
 
 .loading {
   text-align: center;
@@ -743,14 +754,17 @@ h1, h2, h3 {
   padding: 6px 12px;
   font-size: 0.85rem;
 }
-.filter-btn.small .dot {
-  background: var(--text-muted);
-}
-.filter-btn.small.active .dot {
-  background: white;
-}
 .filter-btn.small .difficulty-dots {
   vertical-align: middle;
+}
+.filter-btn.small.active .dot {
+  border-color: white;
+  opacity: 0.7;
+}
+.filter-btn.small.active .dot.filled {
+  background: white;
+  border-color: white;
+  opacity: 1;
 }
 
 /* ===== CHIP FILTRO ATTIVO (tag) ===== */
@@ -849,9 +863,6 @@ a.tag-chip:hover {
 }
 [data-theme="dark"] .filter-btn {
   background: var(--bg);
-}
-[data-theme="dark"] .filter-btn.small .dot {
-  background: var(--text-muted);
 }
 [data-theme="dark"] .filter-btn:not(.active):hover {
   background: var(--accent-soft);
