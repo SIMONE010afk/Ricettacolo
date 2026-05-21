@@ -13,7 +13,7 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
   <header class="site-header">
@@ -24,7 +24,18 @@
       </a>
       <nav class="site-nav">
         <a href="#chi-siamo">Chi siamo</a>
-        <a href="#ricette">Ricette</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+            Ricette
+            <svg class="chevron" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+              <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="salato.html">🍝 Salato</a>
+            <a href="dolce.html">🍰 Dolce</a>
+          </div>
+        </div>
         <button id="theme-toggle" class="icon-btn" type="button" aria-label="Cambia tema chiaro/scuro">
           <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
@@ -71,63 +82,32 @@
   <section id="ricette" class="recipes-section">
     <div class="container">
       <div class="section-head">
-        <h2>Le nostre ricette</h2>
-        <p class="muted">Cercate per nome, ingrediente, tag o categoria. Oppure filtrate per cucina.</p>
+        <h2>Un assaggio delle nostre ricette</h2>
+        <p class="muted">Una selezione varia per ispirarvi. Per vedere tutto, scegliete una categoria.</p>
       </div>
 
-      <div class="controls">
-        <div class="search-wrap">
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-          </svg>
-          <input type="search" id="search-input" placeholder="Cerca una ricetta, un ingrediente, un tag..." autocomplete="off">
-        </div>
-
-        <div class="filters" id="cuisine-filters">
-          <button type="button" class="filter-btn active" data-cuisine="all">Tutte</button>
-          <button type="button" class="filter-btn" data-cuisine="italiana">Italiana</button>
-          <button type="button" class="filter-btn" data-cuisine="messicana">Messicana</button>
-          <button type="button" class="filter-btn" data-cuisine="cinese">Cinese</button>
-          <button type="button" class="filter-btn" data-cuisine="indiana">Indiana</button>
-        </div>
-
-        <div class="filters-row">
-          <div class="filter-group" id="difficulty-filters">
-            <span class="filter-label">Difficoltà:</span>
-            <button type="button" class="filter-btn small active" data-difficulty="all">Tutte</button>
-            <button type="button" class="filter-btn small" data-difficulty="1" aria-label="Difficoltà 1">
-              <span class="difficulty-dots"><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></span>
-            </button>
-            <button type="button" class="filter-btn small" data-difficulty="2" aria-label="Difficoltà 2">
-              <span class="difficulty-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span></span>
-            </button>
-            <button type="button" class="filter-btn small" data-difficulty="3" aria-label="Difficoltà 3">
-              <span class="difficulty-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span></span>
-            </button>
-          </div>
-
-          <div class="filter-group" id="time-filters">
-            <span class="filter-label">Tempo:</span>
-            <button type="button" class="filter-btn small active" data-time="all">Tutti</button>
-            <button type="button" class="filter-btn small" data-time="short">≤30 min</button>
-            <button type="button" class="filter-btn small" data-time="medium">30–60 min</button>
-            <button type="button" class="filter-btn small" data-time="long">60+ min</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="active-filter-bar hidden" id="active-filter-bar">
-        <div class="active-filter-chip">
-          <span>Filtro tag: <strong id="active-filter-label">#</strong></span>
-          <button id="active-filter-clear" type="button" aria-label="Rimuovi filtro">✕</button>
-        </div>
-      </div>
-
-      <div id="recipe-grid" class="recipe-grid">
+      <div id="home-recipe-grid" class="home-recipe-grid">
         <p class="loading">Caricamento ricette...</p>
       </div>
 
-      <p id="no-results" class="no-results hidden">Nessuna ricetta trovata. Prova con un altro termine.</p>
+      <div class="category-ctas">
+        <a href="salato.html" class="category-cta cta-salato">
+          <span class="cta-emoji" aria-hidden="true">🍝</span>
+          <span class="cta-content">
+            <span class="cta-label">Tutte le ricette</span>
+            <span class="cta-name">Salate</span>
+          </span>
+          <span class="cta-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="dolce.html" class="category-cta cta-dolce">
+          <span class="cta-emoji" aria-hidden="true">🍰</span>
+          <span class="cta-content">
+            <span class="cta-label">Tutte le ricette</span>
+            <span class="cta-name">Dolci</span>
+          </span>
+          <span class="cta-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -138,7 +118,9 @@
   </footer>
 
   <script src="js/parser.js"></script>
+  <script src="js/cards.js"></script>
   <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
   <script src="js/home.js"></script>
 </body>
 </html>

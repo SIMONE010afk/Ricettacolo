@@ -1,242 +1,59 @@
 /*
- * Logica della homepage:
- * - carica il manifest delle ricette da Ricette/index.json
- * - carica e parsa ogni .txt
- * - gestisce ricerca testuale + filtro cucina
+ * Logica della homepage (versione semplificata):
+ * - carica tutte le ricette dal manifest
+ * - sceglie 6 ricette casuali (mix salato + dolce per varietà)
+ * - le mostra in una griglia
+ * Niente filtri qui: stanno nelle pagine salato.html / dolce.html.
  */
-
 (function () {
   'use strict';
 
-  const grid = document.getElementById('recipe-grid');
-  const searchInput = document.getElementById('search-input');
-  const filtersBox = document.getElementById('cuisine-filters');
-  const difficultyFilters = document.getElementById('difficulty-filters');
-  const timeFilters = document.getElementById('time-filters');
-  const noResults = document.getElementById('no-results');
-  const yearEl = document.getElementById('year');
-  const activeFilterBar = document.getElementById('active-filter-bar');
-  const activeFilterLabel = document.getElementById('active-filter-label');
-  const activeFilterClear = document.getElementById('active-filter-clear');
+  const PREVIEW_COUNT = 6;
 
+  const grid = document.getElementById('home-recipe-grid');
+  const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  const CATEGORIES = ['Pranzo', 'Cena', 'Dolce', 'Sfizioso'];
+  function pickPreview(recipes) {
+    // Cerco di mostrare un mix Salato / Dolce: max 2 dolci tra le 6
+    // se ce ne sono a sufficienza. Altrimenti riempo con quel che c'è.
+    const dolci = [];
+    const salati = [];
+    recipes.forEach(r => {
+      if (window.RicettacoloCards.macroCategory(r) === 'dolce') dolci.push(r);
+      else salati.push(r);
+    });
 
-  let allRecipes = [];
-  let activeCuisine = 'all';
-  let activeDifficulty = 'all';
-  let activeTime = 'all';
-  let query = '';
-  let activeTagFilter = null; // valorizzato quando arriviamo con ?tag=...
-
-  function difficultyDots(level) {
-    let html = '<span class="difficulty-dots" aria-label="Difficoltà ' + level + ' su 3">';
-    for (let i = 1; i <= 3; i++) {
-      html += '<span class="dot' + (i <= level ? ' filled' : '') + '"></span>';
-    }
-    html += '</span>';
-    return html;
-  }
-
-  function buildCard(recipe) {
-    const card = document.createElement('a');
-    card.className = 'recipe-card';
-    card.href = 'ricetta.html?id=' + encodeURIComponent(recipe.id);
-
-    const imgSrc = recipe.immagine ? 'Immagini/' + recipe.immagine : '';
-    const initial = (recipe.titolo || '?').charAt(0).toUpperCase();
-    const tempo = [recipe.tempoPrep, recipe.tempoCottura].filter(Boolean).join(' + ') || '—';
-
-    card.innerHTML = `
-      <div class="recipe-card-image">
-        ${imgSrc
-          ? `<img src="${imgSrc}" alt="${escapeHtml(recipe.titolo)}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'recipe-card-placeholder',textContent:'${initial}'}))">`
-          : `<span class="recipe-card-placeholder">${initial}</span>`}
-        ${recipe.cucina ? `<span class="recipe-card-cuisine">${escapeHtml(recipe.cucina)}</span>` : ''}
-      </div>
-      <div class="recipe-card-body">
-        <h3 class="recipe-card-title">${escapeHtml(recipe.titolo)}</h3>
-        <p class="muted" style="margin:0;font-size:0.9rem;">${escapeHtml(recipe.categoria || '')}</p>
-        <div class="recipe-card-meta">
-          <span class="meta-item" title="Tempo totale">⏱ ${escapeHtml(tempo)}</span>
-          <span class="meta-item" title="Difficoltà">${difficultyDots(recipe.difficolta)}</span>
-          <span class="meta-item" title="Porzioni">🍽 ${recipe.porzioni}</span>
-        </div>
-      </div>
-    `;
-    return card;
-  }
-
-  function escapeHtml(s) {
-    return String(s == null ? '' : s)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
-  }
-
-  function parseMinutes(str) {
-    const m = String(str || '').match(/(\d+)/);
-    return m ? parseInt(m[1], 10) : 0;
-  }
-  function totalMinutes(recipe) {
-    return parseMinutes(recipe.tempoPrep) + parseMinutes(recipe.tempoCottura);
-  }
-
-  function matchesFilters(recipe) {
-    if (activeCuisine !== 'all') {
-      if ((recipe.cucina || '').toLowerCase() !== activeCuisine) return false;
-    }
-    if (activeDifficulty !== 'all') {
-      if (recipe.difficolta !== parseInt(activeDifficulty, 10)) return false;
-    }
-    if (activeTime !== 'all') {
-      const total = totalMinutes(recipe);
-      if (activeTime === 'short' && total > 30) return false;
-      if (activeTime === 'medium' && (total < 30 || total > 60)) return false;
-      if (activeTime === 'long' && total <= 60) return false;
-    }
-    if (activeTagFilter) {
-      const lower = activeTagFilter.toLowerCase();
-      const has = (recipe.tag || []).some(t => t.toLowerCase() === lower);
-      if (!has) return false;
-    }
-    if (query) {
-      const hay = window.RicettacoloParser.searchHaystack(recipe);
-      const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
-      for (const t of terms) {
-        if (!hay.includes(t)) return false;
+    function shuffle(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
       }
-    }
-    return true;
-  }
-
-  function buildCategorySection(catName, recipes) {
-    const section = document.createElement('section');
-    section.className = 'category-section';
-    const label = recipes.length === 1 ? 'ricetta' : 'ricette';
-    section.innerHTML = `
-      <div class="category-title">
-        <h3>${escapeHtml(catName)}</h3>
-        <span class="category-count">${recipes.length} ${label}</span>
-      </div>
-      <div class="recipe-row"></div>
-    `;
-    const row = section.querySelector('.recipe-row');
-    recipes.forEach(r => row.appendChild(buildCard(r)));
-    return section;
-  }
-
-  function render() {
-    grid.innerHTML = '';
-    const visible = allRecipes.filter(matchesFilters);
-
-    if (visible.length === 0) {
-      noResults.classList.remove('hidden');
-      return;
-    }
-    noResults.classList.add('hidden');
-
-    // raggruppa per categoria, rispettando l'ordine canonico
-    const buckets = {};
-    CATEGORIES.forEach(c => { buckets[c] = []; });
-    const altro = [];
-
-    visible.forEach(r => {
-      const cat = (r.categoria || '').trim();
-      const match = CATEGORIES.find(c => c.toLowerCase() === cat.toLowerCase());
-      if (match) buckets[match].push(r);
-      else altro.push(r);
-    });
-
-    CATEGORIES.forEach(cat => {
-      if (buckets[cat].length > 0) grid.appendChild(buildCategorySection(cat, buckets[cat]));
-    });
-    if (altro.length > 0) grid.appendChild(buildCategorySection('Altre ricette', altro));
-  }
-
-  function activateInGroup(group, btn) {
-    group.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  }
-
-  function setupFilters() {
-    filtersBox.addEventListener('click', (e) => {
-      const btn = e.target.closest('.filter-btn');
-      if (!btn) return;
-      activateInGroup(filtersBox, btn);
-      activeCuisine = btn.dataset.cuisine;
-      render();
-    });
-
-    if (difficultyFilters) {
-      difficultyFilters.addEventListener('click', (e) => {
-        const btn = e.target.closest('.filter-btn');
-        if (!btn) return;
-        activateInGroup(difficultyFilters, btn);
-        activeDifficulty = btn.dataset.difficulty;
-        render();
-      });
+      return a;
     }
 
-    if (timeFilters) {
-      timeFilters.addEventListener('click', (e) => {
-        const btn = e.target.closest('.filter-btn');
-        if (!btn) return;
-        activateInGroup(timeFilters, btn);
-        activeTime = btn.dataset.time;
-        render();
-      });
+    const shuffledDolci = shuffle(dolci);
+    const shuffledSalati = shuffle(salati);
+
+    // target: fino a 2 dolci + il resto salati
+    const dolciTake = Math.min(2, shuffledDolci.length, PREVIEW_COUNT);
+    const salatiTake = Math.min(PREVIEW_COUNT - dolciTake, shuffledSalati.length);
+
+    const selection = [
+      ...shuffledSalati.slice(0, salatiTake),
+      ...shuffledDolci.slice(0, dolciTake)
+    ];
+
+    // se non sono ancora 6 (poche ricette in totale), completo con quel che resta
+    if (selection.length < PREVIEW_COUNT) {
+      const remaining = recipes.filter(r => !selection.includes(r));
+      const more = shuffle(remaining).slice(0, PREVIEW_COUNT - selection.length);
+      selection.push(...more);
     }
-  }
 
-  function setupSearch() {
-    let t;
-    searchInput.addEventListener('input', () => {
-      clearTimeout(t);
-      t = setTimeout(() => {
-        query = searchInput.value.trim();
-        render();
-      }, 120);
-    });
-  }
-
-  function updateTagChip() {
-    if (!activeFilterBar) return;
-    if (activeTagFilter) {
-      activeFilterLabel.textContent = '#' + activeTagFilter;
-      activeFilterBar.classList.remove('hidden');
-    } else {
-      activeFilterBar.classList.add('hidden');
-    }
-  }
-
-  function clearTagFilter() {
-    activeTagFilter = null;
-    updateTagChip();
-    // Pulisce anche l'URL dal parametro tag senza ricaricare
-    if (window.history && window.history.replaceState) {
-      const url = new URL(window.location.href);
-      url.searchParams.delete('tag');
-      window.history.replaceState({}, '', url.toString());
-    }
-    render();
-  }
-
-  function setupActiveFilter() {
-    if (!activeFilterClear) return;
-    activeFilterClear.addEventListener('click', clearTagFilter);
-  }
-
-  function readUrlTag() {
-    const params = new URLSearchParams(window.location.search);
-    const tag = params.get('tag');
-    if (tag) {
-      activeTagFilter = tag.trim();
-      updateTagChip();
-    }
+    // mescolo l'ordine finale così salati e dolci non sono prevedibili
+    return shuffle(selection);
   }
 
   async function loadRecipes() {
@@ -259,8 +76,11 @@
         }
       }));
 
-      allRecipes = results.filter(Boolean);
-      render();
+      const recipes = results.filter(Boolean);
+      const preview = pickPreview(recipes);
+
+      grid.innerHTML = '';
+      preview.forEach(r => grid.appendChild(window.RicettacoloCards.buildCard(r)));
     } catch (err) {
       console.error(err);
       grid.innerHTML = `
@@ -268,14 +88,9 @@
           <strong>Impossibile caricare le ricette.</strong><br>
           Se stai aprendo il sito con doppio click (file://) i browser bloccano fetch().
           Avvia un server locale, ad esempio: <code>python -m http.server</code>
-          dentro la cartella del progetto, e apri <code>http://localhost:8000</code>.
         </div>`;
     }
   }
 
-  readUrlTag();
-  setupFilters();
-  setupSearch();
-  setupActiveFilter();
   loadRecipes();
 })();

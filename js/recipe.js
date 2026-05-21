@@ -42,6 +42,8 @@
 
     const imgSrc = recipe.immagine ? 'Immagini/' + recipe.immagine : '';
     const initial = (recipe.titolo || '?').charAt(0).toUpperCase();
+    // I tag puntano alla pagina della macro-categoria della ricetta corrente
+    const macroCat = (recipe.categoria || '').toLowerCase() === 'dolce' ? 'dolce.html' : 'salato.html';
 
     container.innerHTML = `
       <div class="recipe-hero">
@@ -105,7 +107,7 @@
           ${recipe.tag.length ? `
             <div class="tags-block">
               <span class="tags-label">Tag:</span>
-              ${recipe.tag.map(t => `<a class="tag-chip" href="index.html?tag=${encodeURIComponent(t)}#ricette">#${escapeHtml(t)}</a>`).join('')}
+              ${recipe.tag.map(t => `<a class="tag-chip" href="${macroCat}?tag=${encodeURIComponent(t)}">#${escapeHtml(t)}</a>`).join('')}
             </div>
           ` : ''}
         </section>

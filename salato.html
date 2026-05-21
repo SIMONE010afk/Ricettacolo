@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ricette salate — Ricettacolo</title>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ricettacolo-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css?v=6">
+</head>
+<body data-category="salato" class="page-category">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">R</span>
+        <span class="brand-name">Ricettacolo</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html#chi-siamo">Chi siamo</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+            Ricette
+            <svg class="chevron" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+              <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="salato.html" class="active">🍝 Salato</a>
+            <a href="dolce.html">🍰 Dolce</a>
+          </div>
+        </div>
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Cambia tema chiaro/scuro">
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header-section">
+    <div class="container">
+      <p class="eyebrow">Categoria</p>
+      <h1>Ricette salate</h1>
+      <p class="muted">Pranzi, cene, sfizi e tutto ciò che non è zucchero. Cercate per nome, ingrediente, tag o filtrate per cucina.</p>
+    </div>
+  </section>
+
+  <section class="recipes-section">
+    <div class="container">
+      <div class="controls">
+        <div class="search-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input type="search" id="search-input" placeholder="Cerca una ricetta, un ingrediente, un tag..." autocomplete="off">
+        </div>
+
+        <div class="filters" id="cuisine-filters">
+          <button type="button" class="filter-btn active" data-cuisine="all">Tutte</button>
+          <button type="button" class="filter-btn" data-cuisine="italiana">Italiana</button>
+          <button type="button" class="filter-btn" data-cuisine="messicana">Messicana</button>
+          <button type="button" class="filter-btn" data-cuisine="cinese">Cinese</button>
+          <button type="button" class="filter-btn" data-cuisine="indiana">Indiana</button>
+        </div>
+
+        <div class="filters-row">
+          <div class="filter-group" id="difficulty-filters">
+            <span class="filter-label">Difficoltà:</span>
+            <button type="button" class="filter-btn small active" data-difficulty="all">Tutte</button>
+            <button type="button" class="filter-btn small" data-difficulty="1" aria-label="Difficoltà 1">
+              <span class="difficulty-dots"><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></span>
+            </button>
+            <button type="button" class="filter-btn small" data-difficulty="2" aria-label="Difficoltà 2">
+              <span class="difficulty-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span></span>
+            </button>
+            <button type="button" class="filter-btn small" data-difficulty="3" aria-label="Difficoltà 3">
+              <span class="difficulty-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span></span>
+            </button>
+          </div>
+
+          <div class="filter-group" id="time-filters">
+            <span class="filter-label">Tempo:</span>
+            <button type="button" class="filter-btn small active" data-time="all">Tutti</button>
+            <button type="button" class="filter-btn small" data-time="short">≤30 min</button>
+            <button type="button" class="filter-btn small" data-time="medium">30–60 min</button>
+            <button type="button" class="filter-btn small" data-time="long">60+ min</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="active-filter-bar hidden" id="active-filter-bar">
+        <div class="active-filter-chip">
+          <span>Filtro tag: <strong id="active-filter-label">#</strong></span>
+          <button id="active-filter-clear" type="button" aria-label="Rimuovi filtro">✕</button>
+        </div>
+      </div>
+
+      <div id="recipe-grid" class="category-grid"></div>
+
+      <p id="no-results" class="no-results hidden">Nessuna ricetta trovata. Prova con un altro termine o resetta i filtri.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ricettacolo — ricette di casa, senza fretta.</p>
+    </div>
+  </footer>
+
+  <script src="js/parser.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/category.js"></script>
+</body>
+</html>
