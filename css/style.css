@@ -166,15 +166,15 @@ h1, h2, h3 {
   text-align: center;
 }
 .hero-photo {
-  width: 100%;
-  max-width: 220px;
+  width: 60%;
+  max-width: 180px;
   aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 18px;
   margin: 0 auto 16px;
   display: block;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
-  border: 4px solid var(--bg-card);
+  border: 3px solid var(--bg-card);
 }
 .hero-card-quote {
   font-family: var(--font-serif);
@@ -685,7 +685,7 @@ h1, h2, h3 {
   .hero { padding: 40px 0; }
   .hero-inner { grid-template-columns: 1fr; gap: 32px; }
   .hero-card { aspect-ratio: auto; padding: 28px; }
-  .hero-photo { max-width: 170px; }
+  .hero-photo { max-width: 150px; width: 65%; }
 
   .recipe-hero { grid-template-columns: 1fr; gap: 24px; }
   .recipe-body { grid-template-columns: 1fr; gap: 32px; }
