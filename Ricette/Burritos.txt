@@ -1,0 +1,33 @@
+titolo: Burritos
+categoria: Piatto Unico
+cucina: Messicana
+tempo preparazione: 25 minuti
+tempo cottura: 30 minuti
+difficolta: 2
+porzioni: 2
+immagine: Burritos.jpeg
+tag: burritos, messicano, carne, fagioli, frijoles, piccante, street food, cena
+
+ingredienti:
+- 4 | Tortillas di farina grandi
+- 400 g | Carne macinata di manzo
+- 250 g | Fagioli neri o rossi precotti (oppure frijoles refritos)
+- 150 g | Riso basmati o bianco cotto
+- 1 | Cipolla
+- 1 | Peperone
+- 2 | Carote
+- q.b. | Concentrato di pomodoro
+- q.b. | Spezie messicane (cumino, paprika, peperoncino)
+- q.b. | Olio extravergine d'oliva e sale
+
+procedimento:
+1. Taglia le carote a cubetti molto piccoli. In una padella capiente, fai soffriggere la cipolla tritata, il peperone a listarelle e le carote a cubetti con un filo d'olio.
+2. Quando le verdure iniziano ad ammorbidirsi, aggiungi la carne macinata e falla rosolare bene, sgranandola con un cucchiaio di legno.
+3. Aggiungi il concentrato di pomodoro, le spezie, il sale e i fagioli (se usi i frijoles, daranno una consistenza bella cremosa). Lascia insaporire e restringere il tutto a fuoco medio per circa 10 minuti.
+4. Scalda leggermente le tortillas su una padella piatta o nel microonde per renderle morbide e flessibili (fondamentale per non farle rompere).
+5. Componi il burrito: metti al centro di ogni tortilla due cucchiai di riso e una generosa porzione del mix di carne, fagioli e verdure.
+6. Chiudi il burrito: piega prima i due lembi laterali verso l'interno sopra il ripieno, poi arrotola dal basso verso l'alto stringendo bene.
+7. Scalda il burrito già chiuso per un paio di minuti sulla piastra o in padella per sigillare la chiusura e renderlo leggermente croccante all'esterno. Servi subito!
+
+note:
+Puoi arricchire l'interno del burrito spalmando panna acida, guacamole o aggiungendo insalata croccante prima di chiuderlo. L'uso dei frijoles (crema di fagioli messicana) al posto dei classici fagioli interi rende il ripieno ancora più avvolgente.

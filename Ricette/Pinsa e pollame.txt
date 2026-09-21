@@ -1,0 +1,35 @@
+titolo: Pinsa e pollame
+categoria: Cena
+cucina: Fusion
+tempo preparazione: 15 minuti
+tempo cottura: 1 ora e 15 minuti
+difficolta: 2
+porzioni: 2
+immagine: Pinsa e pollame.jpeg
+tag: pinsa, pollo, birra, salsa barbecue, cipolla caramellata, sostanzioso, lenta cottura
+
+ingredienti:
+- 2 | Pinsa
+- 400 g | Sovraccosce di pollo (disossate)
+- 200 g | Petto di pollo
+- 2 | Cipolle
+- 300 ml | Birra
+- 20 g | Salsa barbecue
+- 10 g | Burro
+- q.b. | Aglio in polvere (opzionale)
+- q.b. | Paprika
+- q.b. | Concentrato di pomodoro
+- q.b. | Olio extravergine d'oliva
+- q.b. | Sale e pepe nero
+
+procedimento:
+1. Taglia il petto di pollo e le sovraccosce a tocchetti o striscioline. Metti la carne in una ciotola capiente e aggiungi la birra, la salsa barbecue, la paprika e l'aglio in polvere (se decidi di usarlo). Mescola bene per insaporire, copri la ciotola e lascia marinare a temperatura ambiente per 1 ora.
+2. Nel frattempo, affetta le cipolle. In una pentola, sciogli il burro e fai caramellare le cipolle a fiamma dolce per circa 15-20 minuti, finché non saranno morbide e ben dorate. Una volta pronte, tienile da parte.
+3. Scola leggermente il pollo dalla marinatura (conservando il liquido) e comincia a cuocerlo in una padella o casseruola capiente. 
+4. Quando la carne è ben rosolata e quasi pronta, versa all'interno della pentola tutta la marinatura tenuta da parte, aggiungi il concentrato di pomodoro, sale e pepe.
+5. Abbassa la fiamma, metti il coperchio e lascia cuocere a fuoco lento per circa un'ora. La carne dovrà diventare morbidissima e il liquido dovrà restringersi trasformandosi in una salsa densa e saporita. Se vuoi, negli ultimi minuti puoi mescolarci dentro le cipolle caramellate (oppure tenerle separate per l'assemblaggio).
+6. Preriscalda il forno. Taglia la pinsa a metà, spennella un filo d'olio sulla parte interna e scaldala in forno finché non diventa ben croccante e calda.
+7. Sforna la pinsa, farciscila abbondantemente con il pollo stufato alla birra e le cipolle caramellate. Chiudi, schiaccia leggermente e goditela calda!
+
+note:
+Il mix tra petto di pollo (più magro) e sovraccoscia (più grassa e saporita) rende il ripieno perfettamente bilanciato. La lunga cottura con la birra e la salsa farà quasi "sfaldare" la carne, rendendola succosa e tenera in stile pulled-chicken. Un'ora di marinatura a temperatura ambiente aiuta la carne a rilassarsi e ad assorbire bene i sapori prima della cottura.
