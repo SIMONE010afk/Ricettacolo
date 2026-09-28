@@ -1,0 +1,30 @@
+titolo: Riso con Pollo, Patate e Uovo
+categoria: Piatto Unico
+cucina: Fusion
+tempo preparazione: 15 minuti
+tempo cottura: 40 minuti
+difficolta: 1
+porzioni: 3
+immagine: riso-pollo-patate-uovo.jpeg
+tag: riso, pollo, patate al forno, uovo, paprika, piatto unico, sostanzioso
+
+ingredienti:
+- 300 g | Riso
+- 500 g | Petto di pollo
+- 600 g | Patate
+- 3 | Uova
+- 2 spicchi | Aglio
+- q.b. | Paprika
+- q.b. | Olio
+- q.b. | Sale
+
+procedimento:
+1. Accendi il forno a 200°C. Taglia le patate a cubetti, condiscile in una ciotola con olio, sale, paprika e l'aglio schiacciato, poi stendile su una teglia con carta forno.
+2. Inforna le patate per 30-35 minuti, girandole a metà cottura, finché non sono dorate e croccanti fuori.
+3. Nel frattempo metti a cuocere il riso in abbondante acqua salata (100 g a persona) e scolalo al dente.
+4. Taglia il pollo a pezzetti e cuocilo in padella con un filo d'olio e un pizzico di sale finché non è ben dorato.
+5. Cuoci le uova in padella con un filo d'olio.
+6. Unisci in padella riso, pollo, patate al forno e uova e mescola tutto per insaporire. Servi caldo.
+
+note:
+Un piatto unico facile e sostanzioso. Se ti piace il piccante puoi usare paprika affumicata o piccante per le patate.

@@ -1,0 +1,29 @@
+titolo: Riso alla Cantonese (variante)
+categoria: Pranzo
+cucina: Cinese
+tempo preparazione: 10 minuti
+tempo cottura: 20 minuti
+difficolta: 1
+porzioni: 3
+immagine: riso-pancetta-uovo-piselli.jpeg
+tag: riso, pancetta, uovo, piselli, salsa di soia, veloce, svuotafrigo
+
+ingredienti:
+- 300 g | Riso
+- 150 g | Pancetta a cubetti
+- 150 g | Piselli
+- 3 | Uova
+- q.b. | Salsa di soia
+- q.b. | Olio
+- q.b. | Sale
+
+procedimento:
+1. Metti a cuocere il riso in abbondante acqua salata (100 g a persona) e scolalo al dente.
+2. Mentre il riso cuoce, fai bollire i piselli in un pentolino di acqua salata per qualche minuto, poi scolali.
+3. In una padella ampia, senza aggiungere olio (basta il grasso della pancetta), fai rosolare la pancetta a cubetti finché non diventa dorata e croccante.
+4. Sposta la pancetta da un lato della padella, aggiungi un filo d'olio se serve e rompi le uova: strapazzale velocemente finché non sono rapprese.
+5. Unisci il riso scolato e i piselli nella padella e mescola bene tutto a fuoco vivace per un paio di minuti.
+6. Aggiungi la salsa di soia a piacere, dai un'ultima mescolata e servi subito.
+
+note:
+Se hai del riso avanzato dal giorno prima, usalo: essendo più asciutto rimane più sgranato in padella. La salsa di soia è già salata, quindi assaggia prima di aggiungere altro sale.

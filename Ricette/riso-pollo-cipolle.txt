@@ -1,0 +1,29 @@
+titolo: Riso con Pollo e Cipolle
+categoria: Pranzo
+cucina: Fusion
+tempo preparazione: 10 minuti
+tempo cottura: 25 minuti
+difficolta: 1
+porzioni: 3
+immagine: riso-pollo-cipolle.jpeg
+tag: riso, pollo, cipolle, salsa di soia, miele, agrodolce, veloce
+
+ingredienti:
+- 300 g | Riso
+- 500 g | Petto di pollo
+- 2 | Cipolle
+- 2 cucchiai | Miele
+- q.b. | Salsa di soia
+- q.b. | Olio
+- q.b. | Sale
+
+procedimento:
+1. Metti a cuocere il riso in abbondante acqua salata (100 g a persona) e scolalo al dente.
+2. Nel frattempo taglia le cipolle a fettine e il pollo a strisce.
+3. In una padella ampia fai rosolare le cipolle con un filo d'olio e un pizzico di sale a fuoco medio, mescolando ogni tanto, finché non diventano morbide e dorate.
+4. Quando le cipolle sono quasi pronte, aggiungi il pollo a strisce e fallo rosolare su tutti i lati.
+5. Aggiungi la salsa di soia e il miele e lascia andare qualche minuto, finché il pollo è cotto e il sughetto si è addensato e lo ha ben glassato.
+6. Servi il pollo con le cipolle sopra il riso e, a piacere, completa con altra salsa di soia a crudo.
+
+note:
+Il miele insieme alla salsa di soia crea una glassa agrodolce: se il sughetto si asciuga troppo, aggiungi un goccio d'acqua. La salsa di soia a crudo alla fine dà una nota più sapida, dosala a gusto.
